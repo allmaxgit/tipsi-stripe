@@ -32,6 +32,8 @@ export default class PaymentCardTextField extends Component {
     cvcPlaceholder: PropTypes.string,
     numberPlaceholder: PropTypes.string,
 
+    autofocus: PropTypes.bool,
+
     onChange: PropTypes.func,
     onValueChange: PropTypes.func,
   }
@@ -46,6 +48,12 @@ export default class PaymentCardTextField extends Component {
     expMonth: 0,
     expYear: 0,
     cvc: '',
+  }
+
+  componentDidMount() {
+    if (this.props.autofocus) {
+      this.focus()
+    }
   }
 
   componentWillUnmount() {

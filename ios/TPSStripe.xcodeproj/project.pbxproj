@@ -260,6 +260,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"${BUILT_PRODUCTS_DIR}/**",
 					"$BUILD_DIR/$CONFIGURATION$EFFECTIVE_PLATFORM_NAME/Stripe/**",
+					"$(PROJECT_DIR)/../../../ios/Carthage/Build/iOS",
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -273,6 +274,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"${BUILT_PRODUCTS_DIR}/**",
 					"$BUILD_DIR/$CONFIGURATION$EFFECTIVE_PLATFORM_NAME/Stripe/**",
+					"$(PROJECT_DIR)/../../../ios/Carthage/Build/iOS",
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";

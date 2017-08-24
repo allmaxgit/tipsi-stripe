@@ -144,6 +144,10 @@
     _paymentCardTextField.placeholderColor = placeholderColor;
 }
 
+- (void)setNumberPlaceholder:(NSString *)numberPlaceholder {
+    _paymentCardTextField.numberPlaceholder = numberPlaceholder;
+}
+
 - (void)setCardParams:(STPCardParams *)cardParams {
     // Remove delegate before update paymentCardTextField with prefilled card
     // for preventing call paymentCardTextFieldDidChange for every fields
