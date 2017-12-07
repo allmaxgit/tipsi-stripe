@@ -64,8 +64,8 @@ export default class ApplePayScreen extends PureComponent {
         label: 'Tipsi',
         amount: '110.00',
       }], {
-        // requiredBillingAddressFields: 'all',
-        // requiredShippingAddressFields: 'all',
+        // requiredBillingAddressFields: ['all'],
+        // requiredShippingAddressFields: ['all'],
         shippingMethods: [{
           id: 'fedex',
           label: 'FedEX',
@@ -133,7 +133,7 @@ export default class ApplePayScreen extends PureComponent {
           {...testID('applePayButton')}
         />
         <Text style={styles.instruction}>
-          Complete the operation on tokent
+          Complete the operation on token
         </Text>
         <Switch
           style={styles.switch}

@@ -6,6 +6,7 @@ const availableApplePayAddressFields = ['all', 'name', 'email', 'phone', 'postal
 export const initOptionsPropTypes = {
   publishableKey: PropTypes.string.isRequired,
   merchantId: PropTypes.string,
+  androidPayMode: PropTypes.string,
 }
 
 export const canMakeApplePayPaymentsOptionsPropTypes = {
@@ -21,8 +22,9 @@ export const paymentRequestWithApplePayItemsPropTypes = {
 
 export const paymentRequestWithApplePayOptionsPropTypes = {
   currencyCode: PropTypes.string,
-  requiredBillingAddressFields: PropTypes.oneOf(availableApplePayAddressFields),
-  requiredShippingAddressFields: PropTypes.oneOf(availableApplePayAddressFields),
+  countryCode: PropTypes.string,
+  requiredBillingAddressFields: PropTypes.arrayOf(PropTypes.oneOf(availableApplePayAddressFields)),
+  requiredShippingAddressFields: PropTypes.arrayOf(PropTypes.oneOf(availableApplePayAddressFields)),
   shippingMethods: PropTypes.arrayOf(PropTypes.shape({
     id: PropTypes.string.isRequired,
     label: PropTypes.string.isRequired,
@@ -94,4 +96,23 @@ export const createTokenWithBankAccountParamsPropTypes = {
 export const paymentRequestWithAndroidPayOptionsPropTypes = {
   total_price: PropTypes.string.isRequired,
   currency_code: PropTypes.string.isRequired,
+  shipping_address_required: PropTypes.bool,
+  line_items: PropTypes.array.isRequired,
+}
+
+export const createSourceWithParamsPropType = {
+  type: PropTypes.oneOf(['bancontact', 'bitcoin', 'giropay', 'ideal', 'sepaDebit', 'sofort', 'threeDSecure', 'alipay']).isRequired,
+  amount: PropTypes.number,
+  name: PropTypes.string,
+  returnURL: PropTypes.string,
+  statementDescriptor: PropTypes.string,
+  currency: PropTypes.string,
+  email: PropTypes.string,
+  bank: PropTypes.string,
+  iban: PropTypes.string,
+  addressLine1: PropTypes.string,
+  city: PropTypes.string,
+  postalCode: PropTypes.string,
+  country: PropTypes.string,
+  card: PropTypes.string,
 }
